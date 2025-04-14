@@ -15,6 +15,14 @@ function(msg=""){
 	list(msg = paste0("The message is: '", msg, "'"))
 }
 
+#* Add two numbers
+#* @param a:number The first number to add.
+#* @param b:number The second number to add.
+#* @get /add
+function(a, b) {
+	as.numeric(a) + as.numeric(b)
+}
+
 #* Plot out data from the iris dataset - without error handling
 #* @param spec:string If provided, filter the data to only this species (e.g. 'setosa')
 #* @get /plot
