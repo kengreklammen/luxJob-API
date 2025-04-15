@@ -40,3 +40,23 @@ function(spec){
 	plot(myData$Sepal.Length, myData$Petal.Length,
 			 main = title, xlab = "Sepal Length", yla = "Petal Length")
 }
+
+#* Multiply two numbers
+#* @param a:number The first number to multiply.
+#* @param b:number The second number to multiply.
+#* @get /mul
+function(a, b) {
+	as.numeric(a) * as.numeric(b)
+}
+
+#* @filter log
+function(req, res) {
+	print(req$HTTP_USER_AGENT) # Just to print some info about the client computer.
+	token <- req$HTTP_AUTHORIZATION
+	if(is.null(token)){
+		res$status <- 401
+		return(list(error = "Missing token"))
+	}
+	list(status = "Access granted")
+	forward()
+}
