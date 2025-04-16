@@ -5,7 +5,6 @@ library(plumber)
 #* @apiTitle Basic Plumber API
 #* @apiDescription This is a simple API to demonstrate the use of plumber.
 #* @apiVersion 1.0.0
-#* @apiContact pierrick.kinif@datagrowth.io
 #* @apiLicense MIT
 
 #* Echo the parameter that was sent in
@@ -52,6 +51,7 @@ function(a, b) {
 #* @filter log
 function(req, res) {
 	print(req$HTTP_USER_AGENT) # Just to print some info about the client computer.
+	print(names(req))
 	token <- req$HTTP_AUTHORIZATION
 	if(is.null(token)){
 		res$status <- 401
