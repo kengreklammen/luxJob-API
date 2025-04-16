@@ -2,7 +2,6 @@
 #  the tokens are stored in a PostgreSQL database
 
 library(plumber)
-# plumber.R
 
 source("verify_token.R")
 
