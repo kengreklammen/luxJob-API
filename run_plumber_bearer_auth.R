@@ -48,7 +48,7 @@ add_bearer_auth <- function(api, paths = NULL) {
 # ------------------------------------------------------------------------------
 # Plumber API Setup
 # ------------------------------------------------------------------------------
-plumber::pr("plumber_bearer_auth.R") |> 
+plumber::pr("plumber_bearer_auth.R") |>
 	
 	# Attach the BearerAuth declaration to the OpenAPI documentation
 	# ⚠️ This is for Swagger UI display only — real token checks must happen in endpoint logic
@@ -83,6 +83,6 @@ plumber::pr("plumber_bearer_auth.R") |>
 	
 	# Run the API server on port 8008, accessible from other machines via 0.0.0.0
 	plumber::pr_run(
-		port = 8008,
+		port = 8080,
 		host = "0.0.0.0"
 	)

@@ -4,4 +4,3 @@
 .gitignore
 manifest.json
 .Rproj.user
-/renv

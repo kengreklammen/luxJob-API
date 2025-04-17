@@ -1,10 +1,11 @@
 services:
-  shiny:
-    image: rhino-app:latest
-    container_name: rhino_app_container
+  luxJob_API:
+    image: my-api:latest
+    container_name: luxJob-API_app_container
     restart: unless-stopped
     ports:
-      - "8008:8008"
+      - "8080:8080"
     volumes:
-      - "./app/:/srv/shiny-server"
-      - "./log/shiny-server/:/var/log/shiny-server/"
+      - "./app/:/api_server"
+    env_file:
+      - .Renviron
